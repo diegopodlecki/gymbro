@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GymBro - Tu Entrenador Personal</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <title>GymBro — Gestión de Entrenador Personal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <!-- Loading -->
     <div id="loading-screen">
         <div class="loading-spinner"></div>
         <p>Cargando GymBro...</p>
     </div>
 
-    <!-- Mobile Menu Button -->
-    <button class="mobile-menu-btn" onclick="toggleSidebar()">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <!-- Mobile Menu -->
+    <button class="mobile-menu-btn" onclick="toggleSidebar()" aria-label="Abrir menú">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 12h18M3 6h18M3 18h18"/>
         </svg>
     </button>
 
     <div class="app-container">
-        <!-- Sidebar -->
+
+        <!-- ===== SIDEBAR ===== -->
         <aside class="sidebar" id="sidebar">
             <div class="logo">
                 <div class="logo-icon">G</div>
@@ -31,63 +34,56 @@
 
             <nav class="nav-menu">
                 <a class="nav-item active" data-tab="dashboard">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="7" height="7"/>
-                        <rect x="14" y="3" width="7" height="7"/>
-                        <rect x="14" y="14" width="7" height="7"/>
-                        <rect x="3" y="14" width="7" height="7"/>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
                     </svg>
                     Dashboard
                 </a>
                 <a class="nav-item" data-tab="students">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                         <circle cx="9" cy="7" r="4"/>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
                     </svg>
                     Estudiantes
                     <span class="nav-badge" id="student-count-badge">0</span>
                 </a>
                 <a class="nav-item" data-tab="routines">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 20V10"/>
-                        <path d="M12 20V4"/>
-                        <path d="M6 20v-6"/>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 20V10M12 20V4M6 20v-6"/>
                     </svg>
                     Rutinas
                 </a>
                 <a class="nav-item" data-tab="exercises">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M6.5 6.5a4 4 0 0 1 0 4a4 4 0 0 1 0 4"/>
-                        <path d="M14.5 14.5a4 4 0 0 1 0 4a4 4 0 0 1 0 4"/>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6.5 6.5a4.5 4.5 0 0 0 0 11M17.5 6.5a4.5 4.5 0 0 1 0 11M3 12h2m14 0h2M6.5 12h11"/>
                     </svg>
                     Ejercicios
                 </a>
                 <a class="nav-item" data-tab="schedule">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                        <line x1="16" y1="2" x2="16" y2="6"/>
-                        <line x1="8" y1="2" x2="8" y2="6"/>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
                         <line x1="3" y1="10" x2="21" y2="10"/>
                     </svg>
                     Horarios
                 </a>
                 <a class="nav-item" data-tab="payments">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2"/>
                         <line x1="1" y1="10" x2="23" y2="10"/>
                     </svg>
                     Pagos
-                    <span class="nav-badge warning" id="payment-count-badge">0</span>
+                    <span class="nav-badge warning" id="payment-count-badge" style="display:none">0</span>
                 </a>
 
                 <div class="nav-divider"></div>
 
                 <a class="nav-item" data-tab="settings">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="3"/>
-                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
                     </svg>
                     Configuración
                 </a>
@@ -96,129 +92,173 @@
             <div class="user-card">
                 <div class="user-avatar">JD</div>
                 <div class="user-info">
-                    <h4 id="user-name">Juan Díaz</h4>
+                    <h4 id="user-name">GymBro</h4>
                     <p>Administrador</p>
                 </div>
             </div>
         </aside>
 
-        <!-- Main Content -->
+        <!-- ===== MAIN CONTENT ===== -->
         <main class="main-content">
+
+            <!-- Header -->
             <div class="header">
                 <div>
                     <h1 id="page-title">Dashboard</h1>
                     <p id="page-subtitle">Resumen de tu gimnasio</p>
                 </div>
-                <button class="btn btn-primary" id="action-btn" onclick="handlePrimaryAction()">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <button class="btn btn-primary" id="action-btn" onclick="handlePrimaryAction()" style="display:none">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <path d="M12 5v14M5 12h14"/>
                     </svg>
-                    <span id="action-btn-text">Nuevo Estudiante</span>
+                    <span id="action-btn-text">Nuevo</span>
                 </button>
             </div>
 
-            <!-- Stats Grid (Dashboard only) -->
+            <!-- Stats -->
             <div class="stats-grid" id="stats-grid">
                 <div class="stat-card clickable" onclick="switchTab('students')">
-                    <div class="stat-icon green">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                        </svg>
+                    <div class="stat-card-inner green">
+                        <div class="stat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <div class="stat-value" id="stat-students">0</div>
+                        <div class="stat-label">Estudiantes activos</div>
+                        <div class="stat-action">
+                            <span>Gestionar</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 id="stat-students">0</h3>
-                    <p>Estudiantes activos <span class="stat-link">→</span></p>
                 </div>
+                
                 <div class="stat-card clickable" onclick="switchTab('schedule')">
-                    <div class="stat-icon blue">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2"/>
-                            <line x1="16" y1="2" x2="16" y2="6"/>
-                            <line x1="8" y1="2" x2="8" y2="6"/>
-                        </svg>
+                    <div class="stat-card-inner blue">
+                        <div class="stat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                        </div>
+                        <div class="stat-value" id="stat-classes">0</div>
+                        <div class="stat-label">Clases programadas</div>
+                        <div class="stat-action">
+                            <span>Ver horario</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 id="stat-classes">0</h3>
-                    <p>Clases programadas <span class="stat-link">→</span></p>
                 </div>
+                
                 <div class="stat-card clickable" onclick="switchTab('routines')">
-                    <div class="stat-icon yellow">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M18 20V10"/>
-                            <path d="M12 20V4"/>
-                            <path d="M6 20v-6"/>
-                        </svg>
+                    <div class="stat-card-inner orange">
+                        <div class="stat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 20V10"/>
+                                <path d="M12 20V4"/>
+                                <path d="M6 20v-6"/>
+                            </svg>
+                        </div>
+                        <div class="stat-value" id="stat-routines">0</div>
+                        <div class="stat-label">Rutinas creadas</div>
+                        <div class="stat-action">
+                            <span>Ver rutinas</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 id="stat-routines">0</h3>
-                    <p>Rutinas <span class="stat-link">→</span></p>
                 </div>
+                
                 <div class="stat-card clickable" onclick="switchTab('payments')">
-                    <div class="stat-icon green">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="12" y1="1" x2="12" y2="23"/>
-                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                        </svg>
+                    <div class="stat-card-inner purple">
+                        <div class="stat-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div class="stat-value" id="stat-income">$0</div>
+                        <div class="stat-label">Ingresos del mes</div>
+                        <div class="stat-action">
+                            <span>Ver pagos</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 id="stat-income">$0</h3>
-                    <p>Ingresos del mes <span class="stat-link">→</span></p>
                 </div>
             </div>
 
-            <!-- ==================== DASHBOARD TAB ==================== -->
+            <!-- ==================== DASHBOARD ==================== -->
             <div id="dashboard" class="tab-content active">
                 <div class="dashboard-widgets">
-                    <!-- Quick Actions -->
                     <div class="quick-actions">
                         <button class="quick-action-btn" onclick="openStudentModal()">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                                 <circle cx="8.5" cy="7" r="4"/>
-                                <line x1="20" y1="8" x2="20" y2="14"/>
-                                <line x1="23" y1="11" x2="17" y2="11"/>
+                                <line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/>
                             </svg>
                             <div>
                                 <strong>Nuevo Estudiante</strong>
-                                <small>Agregar alumno</small>
+                                <small>Registrar alumno</small>
                             </div>
                         </button>
                         <button class="quick-action-btn" onclick="switchTab('routines')">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 5v14M5 12h14"/>
                             </svg>
                             <div>
                                 <strong>Crear Rutina</strong>
-                                <small>Nueva rutina</small>
+                                <small>Diseñar programa</small>
                             </div>
                         </button>
                         <button class="quick-action-btn" onclick="switchTab('schedule')">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="3" y="4" width="18" height="18" rx="2"/>
-                                <line x1="16" y1="2" x2="16" y2="6"/>
-                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
                             </svg>
                             <div>
                                 <strong>Agendar Clase</strong>
-                                <small>Programar</small>
+                                <small>Programar sesión</small>
+                            </div>
+                        </button>
+                        <button class="quick-action-btn" onclick="switchTab('payments')">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="4" width="22" height="16" rx="2"/>
+                                <line x1="1" y1="10" x2="23" y2="10"/>
+                            </svg>
+                            <div>
+                                <strong>Registrar Pago</strong>
+                                <small>Cobro de cuota</small>
                             </div>
                         </button>
                     </div>
 
                     <div class="dashboard-grid">
-                        <!-- Upcoming Classes -->
                         <div class="card">
                             <div class="card-header">
                                 <h2>Próximas Clases</h2>
-                                <a href="#" onclick="switchTab('schedule')">Ver todas →</a>
+                                <a href="#" onclick="switchTab('schedule'); return false;">Ver todas →</a>
                             </div>
                             <div class="card-body" id="upcoming-classes">
                                 <div class="empty-state">No hay clases programadas</div>
                             </div>
                         </div>
-
-                        <!-- Recent Payments -->
                         <div class="card">
                             <div class="card-header">
                                 <h2>Pagos Recientes</h2>
-                                <a href="#" onclick="switchTab('payments')">Ver todos →</a>
+                                <a href="#" onclick="switchTab('payments'); return false;">Ver todos →</a>
                             </div>
                             <div class="card-body" id="recent-payments">
                                 <div class="empty-state">No hay pagos recientes</div>
@@ -228,42 +268,35 @@
                 </div>
             </div>
 
-            <!-- ==================== STUDENTS TAB ==================== -->
+            <!-- ==================== STUDENTS ==================== -->
             <div id="students" class="tab-content">
                 <div class="section-header">
-                    <h2>Gestión de Estudiantes</h2>
+                    <h2>Estudiantes</h2>
                     <button class="btn btn-primary" onclick="openStudentModal()">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 5v14M5 12h14"/>
-                        </svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
                         Nuevo Estudiante
                     </button>
                 </div>
-                
-                <!-- Student Stats -->
+
                 <div class="stats-mini">
                     <div class="stat-mini-card blue">
-                        <h3 id="total-students">0</h3>
-                        <p>Total</p>
+                        <h3 id="total-students">0</h3><p>Total</p>
                     </div>
                     <div class="stat-mini-card green">
-                        <h3 id="active-students">0</h3>
-                        <p>Activos</p>
+                        <h3 id="active-students">0</h3><p>Activos</p>
                     </div>
                     <div class="stat-mini-card gray">
-                        <h3 id="inactive-students">0</h3>
-                        <p>Inactivos</p>
+                        <h3 id="inactive-students">0</h3><p>Inactivos</p>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-body">
                         <div class="search-box">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="11" cy="11" r="8"/>
-                                <path d="M21 21l-4.35-4.35"/>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                             </svg>
-                            <input type="text" id="student-search" placeholder="Buscar estudiantes..." oninput="renderStudents()">
+                            <input type="text" id="student-search" placeholder="Buscar por nombre o email...">
                         </div>
                         <div class="student-list" id="student-list">
                             <div class="empty-state">No hay estudiantes registrados</div>
@@ -272,17 +305,14 @@
                 </div>
             </div>
 
-            <!-- ==================== ROUTINES TAB ==================== -->
+            <!-- ==================== ROUTINES ==================== -->
             <div id="routines" class="tab-content">
                 <div class="section-header">
-                    <h2>Gestión de Rutinas</h2>
+                    <h2>Rutinas</h2>
                 </div>
-                
-                <!-- Create Routine Form -->
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Crear Nueva Rutina</h2>
-                    </div>
+
+                <div class="card" style="margin-bottom:20px">
+                    <div class="card-header"><h2>Nueva Rutina</h2></div>
                     <div class="card-body">
                         <div class="form-grid">
                             <div class="form-group">
@@ -300,25 +330,20 @@
                             </div>
                             <div class="form-group">
                                 <label>Duración (minutos)</label>
-                                <input type="number" id="routine-duration" value="45" min="15" max="120">
+                                <input type="number" id="routine-duration" value="45" min="15" max="180">
                             </div>
-                            <div class="form-group" style="display: flex; align-items: flex-end;">
-                                <button class="btn btn-primary" onclick="createRoutine()" style="width: 100%;">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M12 5v14M5 12h14"/>
-                                    </svg>
+                            <div class="form-group" style="display:flex;align-items:flex-end">
+                                <button class="btn btn-primary" onclick="createRoutine()" style="width:100%">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
                                     Crear Rutina
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Routine List -->
+
                 <div class="card">
-                    <div class="card-header">
-                        <h2>Rutinas Creadas</h2>
-                    </div>
+                    <div class="card-header"><h2>Rutinas Creadas</h2></div>
                     <div class="card-body">
                         <div class="routine-list" id="routine-list">
                             <div class="empty-state">No hay rutinas creadas</div>
@@ -327,12 +352,9 @@
                 </div>
             </div>
 
-            <!-- ==================== EXERCISES TAB ==================== -->
+            <!-- ==================== EXERCISES ==================== -->
             <div id="exercises" class="tab-content">
-                <div class="section-header">
-                    <h2>Biblioteca de Ejercicios</h2>
-                </div>
-                
+                <div class="section-header"><h2>Biblioteca de Ejercicios</h2></div>
                 <div class="card">
                     <div class="card-body">
                         <div class="exercise-filters">
@@ -344,29 +366,22 @@
                             <button class="exercise-filter" data-filter="cardio">🏃 Cardio</button>
                         </div>
                         <div class="exercise-search">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="11" cy="11" r="8"/>
-                                <path d="M21 21l-4.35-4.35"/>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                             </svg>
-                            <input type="text" id="exercise-search-input" placeholder="Buscar ejercicio..." oninput="handleExerciseSearch()">
+                            <input type="text" id="exercise-search-input" placeholder="Buscar ejercicio...">
                         </div>
-                        <div class="exercise-grid" id="exercise-list">
-                        </div>
+                        <div class="exercise-grid" id="exercise-list"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- ==================== SCHEDULE TAB ==================== -->
+            <!-- ==================== SCHEDULE ==================== -->
             <div id="schedule" class="tab-content">
-                <div class="section-header">
-                    <h2>Gestión de Horarios</h2>
-                </div>
-                
-                <!-- Create Class Form -->
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Agendar Nueva Clase</h2>
-                    </div>
+                <div class="section-header"><h2>Horarios</h2></div>
+
+                <div class="card" style="margin-bottom:20px">
+                    <div class="card-header"><h2>Agendar Clase</h2></div>
                     <div class="card-body">
                         <div class="form-grid">
                             <div class="form-group">
@@ -379,31 +394,22 @@
                             </div>
                             <div class="form-group">
                                 <label>Estudiante</label>
-                                <select id="schedule-student">
-                                    <option value="">Seleccionar...</option>
-                                </select>
+                                <select id="schedule-student"><option value="">Seleccionar...</option></select>
                             </div>
                             <div class="form-group">
                                 <label>Rutina</label>
-                                <select id="schedule-routine">
-                                    <option value="">Seleccionar...</option>
-                                </select>
+                                <select id="schedule-routine"><option value="">Seleccionar...</option></select>
                             </div>
                         </div>
                         <button class="btn btn-primary" onclick="createScheduleClass()">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 5v14M5 12h14"/>
-                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
                             Agendar Clase
                         </button>
                     </div>
                 </div>
-                
-                <!-- Schedule List -->
+
                 <div class="card">
-                    <div class="card-header">
-                        <h2>Clases Programadas</h2>
-                    </div>
+                    <div class="card-header"><h2>Clases Programadas</h2></div>
                     <div class="card-body">
                         <div class="schedule-list" id="schedule-list">
                             <div class="empty-state">No hay clases programadas</div>
@@ -412,57 +418,48 @@
                 </div>
             </div>
 
-            <!-- ==================== PAYMENTS TAB ==================== -->
+            <!-- ==================== PAYMENTS ==================== -->
             <div id="payments" class="tab-content">
                 <div class="section-header">
-                    <h2>Gestión de Pagos</h2>
-                    <button class="btn btn-primary" onclick="openPaymentModal()">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 5v14M5 12h14"/>
-                        </svg>
+                    <h2>Pagos</h2>
+                    <button class="btn btn-primary" onclick="clearPaymentForm()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
                         Nuevo Pago
                     </button>
                 </div>
-                
-                <!-- Payment Summary -->
+
                 <div class="stats-mini">
                     <div class="stat-mini-card green">
-                        <h3 id="total-paid">$0</h3>
-                        <p>Pagados</p>
+                        <h3 id="total-paid">$0</h3><p>Pagados</p>
                     </div>
                     <div class="stat-mini-card yellow">
-                        <h3 id="total-pending">$0</h3>
-                        <p>Pendientes</p>
+                        <h3 id="total-pending">$0</h3><p>Pendientes</p>
                     </div>
                     <div class="stat-mini-card red">
-                        <h3 id="total-overdue">$0</h3>
-                        <p>Vencidos</p>
+                        <h3 id="total-overdue">$0</h3><p>Vencidos</p>
                     </div>
                 </div>
-                
-                <!-- Create Payment Form -->
-                <div class="card">
+
+                <div class="card" style="margin-bottom:20px">
                     <div class="card-header">
-                        <h2>Registrar Pago</h2>
+                        <h2 id="payment-form-title">Registrar Pago</h2>
                     </div>
                     <div class="card-body">
                         <div class="form-grid">
                             <div class="form-group">
                                 <label>Estudiante</label>
-                                <select id="payment-student">
-                                    <option value="">Seleccionar...</option>
-                                </select>
+                                <select id="payment-student"><option value="">Seleccionar...</option></select>
                             </div>
                             <div class="form-group">
                                 <label>Monto ($)</label>
-                                <input type="number" id="payment-amount" placeholder="250" value="250">
+                                <input type="number" id="payment-amount" placeholder="250" value="250" min="1">
                             </div>
                             <div class="form-group">
                                 <label>Fecha límite</label>
                                 <input type="date" id="payment-due">
                             </div>
                             <div class="form-group">
-                                <label>Estado inicial</label>
+                                <label>Estado</label>
                                 <select id="payment-status">
                                     <option value="pending">Pendiente</option>
                                     <option value="paid">Pagado</option>
@@ -470,20 +467,20 @@
                                 </select>
                             </div>
                         </div>
-                        <button class="btn btn-primary" onclick="createPayment()">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 5v14M5 12h14"/>
-                            </svg>
-                            Guardar Pago
-                        </button>
+                        <div style="display:flex;gap:10px">
+                            <button class="btn btn-primary" onclick="createPayment()">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                                Guardar Pago
+                            </button>
+                            <button class="btn btn-secondary" id="cancel-edit-btn" onclick="clearPaymentForm()" style="display:none">
+                                Cancelar edición
+                            </button>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Payment List -->
+
                 <div class="card">
-                    <div class="card-header">
-                        <h2>Historial de Pagos</h2>
-                    </div>
+                    <div class="card-header"><h2>Historial de Pagos</h2></div>
                     <div class="card-body">
                         <div class="payment-list" id="payment-list">
                             <div class="empty-state">No hay pagos registrados</div>
@@ -492,12 +489,9 @@
                 </div>
             </div>
 
-            <!-- ==================== SETTINGS TAB ==================== -->
+            <!-- ==================== SETTINGS ==================== -->
             <div id="settings" class="tab-content">
-                <div class="section-header">
-                    <h2>Configuración del Gimnasio</h2>
-                </div>
-                
+                <div class="section-header"><h2>Configuración</h2></div>
                 <div class="card">
                     <div class="card-body">
                         <div class="form-grid">
@@ -507,47 +501,47 @@
                             </div>
                             <div class="form-group">
                                 <label>Precio por clase ($)</label>
-                                <input type="number" id="class-price" value="250">
+                                <input type="number" id="class-price" value="250" min="1">
                             </div>
                             <div class="form-group">
                                 <label>Moneda</label>
                                 <select id="currency">
+                                    <option value="ARS">ARS ($)</option>
                                     <option value="MXN">MXN ($)</option>
                                     <option value="USD">USD ($)</option>
                                     <option value="EUR">EUR (€)</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Horario de apertura</label>
+                                <label>Horario apertura</label>
                                 <input type="time" id="open-time" value="06:00">
                             </div>
                             <div class="form-group">
-                                <label>Horario de cierre</label>
+                                <label>Horario cierre</label>
                                 <input type="time" id="close-time" value="22:00">
                             </div>
                         </div>
                         <button class="btn btn-primary" onclick="saveSettings()">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
-                                <polyline points="17 21 17 13 7 13 7 21"/>
-                                <polyline points="7 3 7 8 15 8"/>
+                                <polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/>
                             </svg>
                             Guardar Configuración
                         </button>
                     </div>
                 </div>
             </div>
+
         </main>
     </div>
 
-    <!-- ==================== MODALS ==================== -->
-    <!-- Student Modal -->
+    <!-- ===== MODAL: STUDENT ===== -->
     <div class="modal-overlay" id="student-modal">
         <div class="modal">
             <div class="modal-header">
                 <h3 id="student-modal-title">Nuevo Estudiante</h3>
                 <button class="modal-close" onclick="closeStudentModal()">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M18 6L6 18M6 6l12 12"/>
                     </svg>
                 </button>
@@ -563,11 +557,18 @@
                 </div>
                 <div class="form-group">
                     <label>Teléfono</label>
-                    <input type="tel" id="student-phone" placeholder="5523456789">
+                    <input type="tel" id="student-phone" placeholder="11 2345-6789">
+                </div>
+                <div class="form-group">
+                    <label>Estado</label>
+                    <select id="student-status">
+                        <option value="active">Activo</option>
+                        <option value="inactive">Inactivo</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Notas</label>
-                    <input type="text" id="student-notes" placeholder="Notas adicionales...">
+                    <input type="text" id="student-notes" placeholder="Observaciones, lesiones, objetivos...">
                 </div>
             </div>
             <div class="modal-footer">
@@ -577,10 +578,21 @@
         </div>
     </div>
 
-    <!-- Notification -->
+    <!-- ===== CUSTOM CONFIRM DIALOG ===== -->
+    <div id="confirm-overlay" class="confirm-overlay" style="display:none">
+        <div class="confirm-box">
+            <h4 id="confirm-title">¿Estás seguro?</h4>
+            <p id="confirm-message">Esta acción no se puede deshacer.</p>
+            <div class="confirm-actions">
+                <button class="btn btn-secondary" onclick="confirmReject()">Cancelar</button>
+                <button class="btn btn-danger" id="confirm-ok-btn" onclick="confirmAccept()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== NOTIFICATION ===== -->
     <div class="notification" id="notification"></div>
 
-    <!-- SQLite -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
     <script src="app.js"></script>
 </body>
